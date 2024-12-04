@@ -9,10 +9,13 @@ class SchoolModel {
     required this.numberStudents,
     required this.numberTeachers});
 
-  factory SchoolModel.fromJson(Map<String, dynamic> json){
-    return SchoolModel(schoolName: json['schoolName'],
-        schoolAddress: json['schoolAddress'],
-        numberStudents: json['numberStudents'],
-        numberTeachers: json['numberTeachers']);
+  factory SchoolModel.fromJson(Map<String, dynamic> json) {
+    return SchoolModel(
+      schoolName: json['School Name'],
+      schoolAddress: json['School Address'],
+      numberStudents: int.parse(json['Number of Students'].split(' ')[0]),
+      numberTeachers: int.parse(json['Number of Teachers'].split(' ')[0]),
+    );
   }
+
 }
